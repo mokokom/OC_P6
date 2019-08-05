@@ -1,0 +1,431 @@
+/********** GENERAL **********/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #2c2137 !important;
+  font-family: "Bungee Inline", cursive !important;
+  color: #edb4a1 !important;
+}
+
+h1 {
+  font-family: "Bungee Shade", cursive !important;
+}
+
+.fight-btn {
+  border-style: none;
+  visibility: hidden;
+}
+
+.modal-content {
+  background: #2c2137 !important;
+}
+
+.reload {
+  background: #edb4a1 !important;
+  color: #2c2137 !important;
+}
+
+#board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(10, 4vw);
+  grid-template-rows: repeat(10, 4vw);
+  grid-gap: 4px;
+}
+
+.cell {
+  background-color: #764462;
+  border-radius: 5px;
+}
+
+.card {
+  border: none;
+  background-color: inherit;
+}
+
+/********** COMPONENTS **********/
+
+.accessible {
+  background: #edb4a1;
+  cursor: pointer;
+  animation: zoomIn 1s 1;
+  box-shadow: 1px 1px 2px 2px #f44335 !important;
+}
+
+.obstacle {
+  background-image: url(components/images/derrick.png);
+  background-size: cover;
+}
+
+/********** WEAPONS **********/
+
+.blaster {
+  background-image: url(components/images/weapons/021-blaster.png);
+  background-size: cover;
+}
+
+.magic-sword {
+  background-image: url(components/images/weapons/024-weapons.png);
+  background-size: cover;
+}
+
+.super-pistol {
+  background-image: url(components/images/weapons/027-blaster-1.png);
+  background-size: cover;
+}
+
+.mega-blaster {
+  background-image: url(components/images/weapons/blaster.png);
+  background-size: cover;
+}
+
+.mega-power {
+  background-image: url(components/images/weapons/023-superhero-20.png);
+  background-size: cover;
+}
+
+.weapon-effect {
+  animation: heartBeat 5s infinite;
+  box-shadow: 0px 0px 9px 1px #f44335;
+}
+
+/********** Players images **********/
+
+.hero1 {
+  background-image: url(components/images/players/hero-15.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.avatar1 {
+  background-image: url(components/images/players/hero-15.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+}
+
+.hero2 {
+  background-image: url(components/images/players/hero-16.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.avatar2 {
+  background-image: url(components/images/players/hero-16.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+}
+
+.battle {
+  background-image: url(components/images/weapons/022-fist.png);
+  background-size: cover;
+}
+
+.standard-size-img {
+  width: 70px;
+  height: 70px;
+}
+
+/********** Player area description **********/
+
+.life {
+  position: relative;
+  height: 40px;
+  width: 60%;
+  border: 1px solid #f44335;
+  box-sizing: content-box;
+}
+
+.heart img {
+  position: absolute;
+  max-height: 40px;
+  left: 10%;
+  transform: translate(-25%, -50%);
+  animation: pulse 2s infinite;
+}
+
+.hero-defense img {
+  visibility: hidden;
+  position: absolute;
+  max-height: 40px;
+  top: 50%;
+  right: 5%;
+  transform: translate(-25%, -50%);
+}
+
+.hero1-barre-life {
+  background: linear-gradient(to right, rgb(255, 106, 95), rgb(255, 33, 33));
+  height: 100%;
+  width: 100%;
+}
+
+.hero2-barre-life {
+  background: linear-gradient(to right, rgb(255, 106, 95), rgb(255, 33, 33));
+  height: 100%;
+  width: 100%;
+}
+
+.fight-btn {
+  border-radius: 50px;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+.hero-defense {
+  background-image: url(components/images/weapons/026-belt.png);
+}
+
+/********** ANIMATION **********/
+
+@-webkit-keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.heartBeat {
+  -webkit-animation-name: heartBeat;
+  animation-name: heartBeat;
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+@-webkit-keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+
+/********** MEDIA QUERIES **********/
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 2em;
+  }
+  #board {
+    grid-template-columns: repeat(10, 7vw);
+    grid-template-rows: repeat(10, 7vw);
+  }
+}
